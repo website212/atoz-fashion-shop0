@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A to Z Fashion Shop Beed</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#ffffff;
+    color:#333;
+    line-height:1.6;
+}
+
+/* NAVBAR */
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#ffffff;
+    padding:15px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+}
+
+.logo-text{
+    font-size:22px;
+    font-weight:bold;
+    color:#e88cae;
+}
+
+nav a{
+    text-decoration:none;
+    color:#444;
+    margin-left:18px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#e88cae;
+}
+
+/* BISMILLAH */
+.bismillah{
+    text-align:center;
+    padding:15px 10px 5px;
+    color:#b28a35;
+    font-size:20px;
+    font-weight:600;
+    background:#fffdf8;
+}
+
+/* HERO */
+.hero{
+    padding:55px 7% 70px;
+    text-align:center;
+    background:linear-gradient(135deg,#fff8fb,#eef9ff);
+}
+
+.hero img{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    border-radius:50%;
+    background:white;
+    padding:8px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.hero h1{
+    margin-top:20px;
+    font-size:38px;
+    color:#e47f9f;
+}
+
+.hero .islamic-line{
+    margin-top:8px;
+    color:#b28a35;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.hero p{
+    font-size:18px;
+    margin:12px auto 25px;
+    max-width:650px;
+    color:#555;
+}
+
+/* BUTTONS */
+.buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.btn{
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:30px;
+    font-weight:bold;
+    display:inline-block;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.whatsapp{
+    background:#dff8e7;
+    color:#159447;
+}
+
+.call{
+    background:#e8f4ff;
+    color:#2277bb;
+}
+
+.email{
+    background:#fff0f5;
+    color:#d55c86;
+}
+
+.location{
+    background:#fff5d9;
+    color:#a87900;
+}
+
+/* SECTION */
+section{
+    padding:60px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2{
+    font-size:30px;
+    color:#e47f9f;
+}
+
+.section-title p{
+    color:#666;
+}
+
+.mashaallah{
+    color:#b28a35;
+    font-size:17px;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+/* CATEGORIES */
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:18px;
+}
+
+.category{
+    padding:25px 15px;
+    text-align:center;
+    background:#fff8fb;
+    border:1px solid #f4dbe5;
+    border-radius:18px;
+    transition:0.3s;
+}
+
+.category:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.category h3{
+    color:#df7799;
+    margin-bottom:5px;
+}
+
+/* PRODUCTS */
+.products{
+    background:#f7fcff;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.product{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,0.08);
+}
+
+.product img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.product-info{
+    padding:18px;
+}
+
+.product-info h3{
+    color:#df7799;
+    margin-bottom:6px;
+}
+
+.product-info p{
+    color:#666;
+}
+
+/* ABOUT */
+.about{
+    background:white;
+}
+
+.about-box{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    background:#fff8fb;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid #f3dce6;
+}
+
+.about-box .dua{
+    margin-top:18px;
+    color:#b28a35;
+    font-weight:bold;
+}
+
+/* REVIEWS */
+.reviews{
+    background:#f8fcff;
+}
+
+.rating-summary{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.big-rating{
+    font-size:45px;
+    font-weight:bold;
+    color:#d99b16;
+}
+
+.stars{
+    color:#f4b400;
+    font-size:30px;
+    letter-spacing:3px;
+}
+
+/* REVIEW FORM */
+.review-form{
+    max-width:650px;
+    margin:0 auto 35px;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.07);
+}
+
+.review-form input,
+.review-form textarea{
+    width:100%;
+    padding:13px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+}
+
+.review-form textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+.star-select{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.star-select span{
+    font-size:32px;
+    color:#ccc;
+    cursor:pointer;
+}
+
+.star-select span.active{
+    color:#f4b400;
+}
+
+.submit-review{
+    width:100%;
+    border:none;
+    padding:13px;
+    border-radius:25px;
+    background:#e88cae;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* REVIEW CARDS */
+.review-list{
+    max-width:850px;
+    margin:auto;
+}
+
+.review-card{
+    background:white;
+    padding:20px;
+    margin-bottom:15px;
+    border-radius:16px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.06);
+}
+
+.review-card h3{
+    color:#df7799;
+}
+
+.review-stars{
+    color:#f4b400;
+    margin:5px 0;
+}
+
+.review-card p{
+    color:#555;
+    margin-bottom:12px;
+}
+
+.review-actions{
+    display:flex;
+    gap:10px;
+}
+
+.like-btn,
+.dislike-btn{
+    border:none;
+    padding:8px 14px;
+    border-radius:20px;
+    cursor:pointer;
+    background:#f3f7fa;
+    color:#555;
+}
+
+.like-btn:hover{
+    background:#e4f8ea;
+}
+
+.dislike-btn:hover{
+    background:#fff0f0;
+}
+
+/* CONTACT */
+.contact{
+    background:#fff8fb;
+}
+
+.contact-box{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+}
+
+.contact-box p{
+    margin:10px 0;
+}
+
+/* INSTAGRAM */
+.instagram{
+    text-align:center;
+    background:white;
+}
+
+.instagram a{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 22px;
+    border-radius:25px;
+    background:#eaf5ff;
+    color:#2277bb;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px 15px;
+    background:#fff1f6;
+    color:#666;
+}
+
+.footer-islamic{
+    color:#b28a35;
+    font-weight:bold;
+    margin-bottom:8px;
+    font-size:17px;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+    nav{
+        padding:12px 4%;
+    }
+
+    nav a{
+        margin-left:8px;
+        font-size:13px;
+    }
+
+    .hero{
+        padding:45px 5% 55px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .bismillah{
+        font-size:17px;
+    }
+
+    section{
+        padding:45px 5%;
+    }
+
+    .product img{
+        height:250px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo-text">A to Z Fashion</div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#products">Collection</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+
+<!-- BISMILLAH -->
+<div class="bismillah">
+    بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+</div>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <img src="logo.jpg" alt="A to Z Fashion Shop Logo">
+
+    <h1>A to Z Fashion Shop</h1>
+
+    <div class="islamic-line">
+        MashaAllah • Elegant Women's Fashion
+    </div>
+
+    <p>
+        Trendy Women's Fashion in Beed.
+        Discover beautiful outfits for every occasion.
+    </p>
+
+    <div class="buttons">
+
+        <a class="btn whatsapp"
+        href="https://wa.me/919260804050"
+        target="_blank">
+        WhatsApp
+        </a>
+
+        <a class="btn call"
+        href="tel:+919260804050">
+        Call Now
+        </a>
+
+        <a class="btn email"
+        href="mailto:aref.beed2015@gmail.com">
+        Email
+        </a>
+
+        <a class="btn location"
+        href="https://www.google.com/maps/search/?api=1&query=Near%20Narayana%20Hospital%2C%20Shahu%20Nagar%2C%20Beed%2C%20Maharashtra"
+        target="_blank">
+        Location
+        </a>
+
+    </div>
+</section>
+
+
+<!-- CATEGORIES -->
+<section>
+
+    <div class="section-title">
+
+        <div class="mashaallah">
+            MashaAllah ✨
+        </div>
+
+        <h2>Our Categories</h2>
+
+        <p>
+            Explore our latest women's fashion collection
+        </p>
+
+    </div>
+
+    <div class="category-grid">
+
+        <div class="category">
+            <h3>3 Piece Sets</h3>
+            <p>Stylish & trendy</p>
+        </div>
+
+        <div class="category">
+            <h3>2 Piece Sets</h3>
+            <p>Beautiful outfits</p>
+        </div>
+
+        <div class="category">
+            <h3>One Piece</h3>
+            <p>Modern fashion</p>
+        </div>
+
+        <div class="category">
+            <h3>Night Dresses</h3>
+            <p>Comfortable styles</p>
+        </div>
+
+        <div class="category">
+            <h3>Party Wear</h3>
+            <p>Special occasions</p>
+        </div>
+
+        <div class="category">
+            <h3>Kurtis & Tops</h3>
+            <p>Everyday fashion</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+
+    <div class="section-title">
+
+        <div class="mashaallah">
+            MashaAllah ✨
+        </div>
+
+        <h2>Featured Collection</h2>
+
+        <p>
+            Beautiful styles selected for you
+        </p>
+
+    </div>
+
+    <div class="product-grid">
+
+        <div class="product">
+
+            <img src="product1.jpg"
+            alt="Fashion Collection">
+
+            <div class="product-info">
+
+                <h3>Latest Collection</h3>
+
+                <p>
+                    Trendy women's fashion
+                </p>
+
+            </div>
+        </div>
+
+
+        <div class="product">
+
+            <img src="product2.jpg"
+            alt="Women's Dress">
+
+            <div class="product-info">
+
+                <h3>Party Wear</h3>
+
+                <p>
+                    Perfect for special occasions
+                </p>
+
+            </div>
+        </div>
+
+
+        <div class="product">
+
+            <img src="product3.jpg"
+            alt="Women's Fashion">
+
+            <div class="product-info">
+
+                <h3>Stylish Outfits</h3>
+
+                <p>
+                    Beautiful and comfortable
+                </p>
+
+            </div>
+        </div>
+
+
+        <div class="product">
+
+            <img src="product4.jpg"
+            alt="Fashion Dress">
+
+            <div class="product-info">
+
+                <h3>New Arrivals</h3>
+
+                <p>
+                    Explore the latest styles
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="about">
+
+    <div class="section-title">
+
+        <h2>About A to Z Fashion</h2>
+
+    </div>
+
+    <div class="about-box">
+
+        <p>
+            Welcome to A to Z Fashion Shop Beed.
+            We offer a beautiful collection of women's clothing,
+            including 3-piece sets, 2-piece sets, one-piece dresses,
+            night dresses, party wear, kurtis, tops and more.
+        </p>
+
+        <div class="dua">
+            Alhamdulillah • Fashion with Elegance & Grace
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+
+    <div class="section-title">
+
+        <div class="mashaallah">
+            Your Experience Matters 🤍
+        </div>
+
+        <h2>Customer Reviews</h2>
+
+        <p>
+            Share your experience with A to Z Fashion Shop
+        </p>
+
+    </div>
+
+
+    <div class="rating-summary">
+
+        <div class="big-rating" id="averageRating">
+            5.0
+        </div>
+
+        <div class="stars">
+            ★★★★★
+        </div>
+
+        <p id="reviewCount">
+            0 Reviews
+        </p>
+
+    </div>
+
+
+    <div class="review-form">
+
+        <input
+        type="text"
+        id="customerName"
+        placeholder="Your Name"
+        maxlength="40">
+
+        <div class="star-select" id="starSelect">
+
+            <span data-star="1">★</span>
+            <span data-star="2">★</span>
+            <span data-star="3">★</span>
+            <span data-star="4">★</span>
+            <span data-star="5">★</span>
+
+        </div>
+
+        <textarea
+        id="customerReview"
+        placeholder="Write your review..."
+        maxlength="300"></textarea>
+
+        <button
+        class="submit-review"
+        onclick="addReview()">
+        Submit Review
+        </button>
+
+    </div>
+
+
+    <div class="review-list" id="reviewList"></div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <div class="section-title">
+
+        <h2>Contact Us</h2>
+
+    </div>
+
+    <div class="contact-box">
+
+        <p>
+            📍 Near Narayana Hospital, Shahu Nagar,
+            Beed, Maharashtra
+        </p>
+
+        <p>
+            📞 92608 04050
+        </p>
+
+        <p>
+            ✉️ aref.beed2015@gmail.com
+        </p>
+
+        <div class="buttons" style="margin-top:20px;">
+
+            <a class="btn whatsapp"
+            href="https://wa.me/919260804050"
+            target="_blank">
+            WhatsApp Us
+            </a>
+
+            <a class="btn location"
+            href="https://www.google.com/maps/search/?api=1&query=Near%20Narayana%20Hospital%2C%20Shahu%20Nagar%2C%20Beed%2C%20Maharashtra"
+            target="_blank">
+            Open Location
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INSTAGRAM -->
+<section class="instagram">
+
+    <div class="section-title">
+
+        <h2>Follow Us on Instagram</h2>
+
+        <p>
+            See our latest fashion updates
+        </p>
+
+    </div>
+
+    <a
+    href="https://www.instagram.com/atoz_fashion_top/"
+    target="_blank">
+    @atoz_fashion_top
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-islamic">
+        الحمد لله على كل حال
+    </div>
+
+    <p>
+        Alhamdulillah for everything 🤍
+    </p>
+
+    <p>
+        © 2026 A to Z Fashion Shop Beed
+    </p>
+
+    <p>
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+/* STAR RATING */
+
+let selectedRating = 0;
+
+const stars =
+document.querySelectorAll("#starSelect span");
+
+
+stars.forEach(star => {
+
+    star.addEventListener("click", function(){
+
+        selectedRating =
+        Number(this.dataset.star);
+
+        stars.forEach(s => {
+
+            if(
+                Number(s.dataset.star)
+                <= selectedRating
+            ){
+
+                s.classList.add("active");
+
+            }else{
+
+                s.classList.remove("active");
+
+            }
+
+        });
+
+    });
+
+});
+
+
+/* GET REVIEWS */
+
+function getReviews(){
+
+    return JSON.parse(
+        localStorage.getItem("atozReviews")
+        || "[]"
+    );
+
+}
+
+
+/* SAVE REVIEWS */
+
+function saveReviews(reviews){
+
+    localStorage.setItem(
+        "atozReviews",
+        JSON.stringify(reviews)
+    );
+
+}
+
+
+/* ADD REVIEW */
+
+function addReview(){
+
+    const name =
+    document
+    .getElementById("customerName")
+    .value
+    .trim();
+
+
+    const reviewText =
+    document
+    .getElementById("customerReview")
+    .value
+    .trim();
+
+
+    if(name === ""){
+
+        alert("Please enter your name.");
+
+        return;
+
+    }
+
+
+    if(selectedRating === 0){
+
+        alert("Please select a star rating.");
+
+        return;
+
+    }
+
+
+    if(reviewText === ""){
+
+        alert("Please write your review.");
+
+        return;
+
+    }
+
+
+    const reviews =
+    getReviews();
+
+
+    const newReview = {
+
+        id:Date.now(),
+
+        name:name,
+
+        rating:selectedRating,
+
+        text:reviewText,
+
+        likes:0,
+
+        dislikes:0
+
+    };
+
+
+    reviews.unshift(newReview);
+
+
+    saveReviews(reviews);
+
+
+    document
+    .getElementById("customerName")
+    .value="";
+
+
+    document
+    .getElementById("customerReview")
+    .value="";
+
+
+    selectedRating=0;
+
+
+    stars.forEach(s => {
+
+        s.classList.remove("active");
+
+    });
+
+
+    displayReviews();
+
+
+    alert(
+        "JazakAllahu Khairan! 🤍 Your review has been added."
+    );
+
+}
+
+
+/* DISPLAY REVIEWS */
+
+function displayReviews(){
+
+    const reviews =
+    getReviews();
+
+
+    const reviewList =
+    document.getElementById("reviewList");
+
+
+    reviewList.innerHTML="";
+
+
+    reviews.forEach(review => {
+
+        const card =
+        document.createElement("div");
+
+
+        card.className =
+        "review-card";
+
+
+        let starHTML="";
+
+
+        for(
+            let i=1;
+            i<=5;
+            i++
+        ){
+
+            starHTML +=
+            i <= review.rating
+            ? "★"
+            : "☆";
+
+        }
+
+
+        card.innerHTML=`
+
+            <h3>
+                ${escapeHTML(review.name)}
+            </h3>
+
+            <div class="review-stars">
+                ${starHTML}
+            </div>
+
+            <p>
+                ${escapeHTML(review.text)}
+            </p>
+
+            <div class="review-actions">
+
+                <button
+                class="like-btn"
+                onclick="likeReview(${review.id})">
+                👍 ${review.likes}
+                </button>
+
+                <button
+                class="dislike-btn"
+                onclick="dislikeReview(${review.id})">
+                👎 ${review.dislikes}
+                </button>
+
+            </div>
+
+        `;
+
+
+        reviewList.appendChild(card);
+
+    });
+
+
+    updateRating(reviews);
+
+}
+
+
+/* LIKE */
+
+function likeReview(id){
+
+    const reviews =
+    getReviews();
+
+
+    const review =
+    reviews.find(
+        r => r.id === id
+    );
+
+
+    if(review){
+
+        review.likes++;
+
+        saveReviews(reviews);
+
+        displayReviews();
+
+    }
+
+}
+
+
+/* DISLIKE */
+
+function dislikeReview(id){
+
+    const reviews =
+    getReviews();
+
+
+    const review =
+    reviews.find(
+        r => r.id === id
+    );
+
+
+    if(review){
+
+        review.dislikes++;
+
+        saveReviews(reviews);
+
+        displayReviews();
+
+    }
+
+}
+
+
+/* AVERAGE RATING */
+
+function updateRating(reviews){
+
+    const ratingElement =
+    document.getElementById(
+        "averageRating"
+    );
+
+
+    const countElement =
+    document.getElementById(
+        "reviewCount"
+    );
+
+
+    if(reviews.length === 0){
+
+        ratingElement.textContent="5.0";
+
+        countElement.textContent=
+        "0 Reviews";
+
+        return;
+
+    }
+
+
+    let total=0;
+
+
+    reviews.forEach(review => {
+
+        total += review.rating;
+
+    });
+
+
+    const average =
+    total / reviews.length;
+
+
+    ratingElement.textContent =
+    average.toFixed(1);
+
+
+    countElement.textContent =
+    reviews.length +
+    (
+        reviews.length === 1
+        ? " Review"
+        : " Reviews"
+    );
+
+}
+
+
+/* SECURITY */
+
+function escapeHTML(text){
+
+    const div =
+    document.createElement("div");
+
+    div.textContent=text;
+
+    return div.innerHTML;
+
+}
+
+
+/* LOAD REVIEWS */
+
+displayReviews();
+
+</script>
+
+</body>
+</html>
